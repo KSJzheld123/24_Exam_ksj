@@ -1,26 +1,21 @@
 package org.koreait;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        int 숫자 = sc.nextInt();
+        int a = 0;
+        int b = 1;
 
-        for (int i = 숫자; i > 0; i--) {
-            String 결과값 = "";
-            int 모양 = 숫자 - i;
+        String 수열 = "0 1 ";
 
-            for (int j = 모양; j > 0; j--) {
-                결과값 += " ";
-            }
-
-            for (int j = 0; j < i; j++) {
-                결과값 += String.valueOf(i - j) + " ";
-            }
-
-            System.out.println(결과값);
+        for(int i = 0; i < 8; i++) {
+            int c = a + b;
+            a = b;
+            b = c;
+            수열 += (String.valueOf(c)) + " ";
         }
+
+        System.out.println(수열);
+
     }
 }
